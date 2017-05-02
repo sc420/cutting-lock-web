@@ -199,7 +199,7 @@ securityDefinitions:
     in: header
 definitions:
   User:
-    title: A user.
+    description: A user.
     type: object
     required:
       - id
@@ -224,14 +224,14 @@ definitions:
         items:
           $ref: '#/definitions/Role'
   Role:
-    title: A role of the identity.
+    description: A role of the identity.
     type: string
     enum:
       - superuser
       - manager
       - scheduled-manager
   History:
-    title: A list of events in the past.
+    description: A list of events in the past.
     type: object
     required:
       - size
@@ -246,7 +246,7 @@ definitions:
         items:
           $ref: '#/definitions/Event'
   Event:
-    title: An event.
+    description: An event.
     type: object
     required:
       - date
@@ -264,7 +264,7 @@ definitions:
         description: The ID of the object participated in the event.
         type: string
   ApiResponse:
-    title: An API response.
+    description: An API response.
     type: object
     properties:
       code:
