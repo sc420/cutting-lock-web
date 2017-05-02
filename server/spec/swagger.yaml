@@ -1,0 +1,317 @@
+swagger: '2.0'
+info:
+  description: >-
+    A painstaking smart lock using biometric technology and physical pain to
+    painlessly open the door while preventing the painful memory of valuable
+    things being stolen.
+  version: 1.0.0
+  title: Cutting Lock
+  termsOfService: 'http://cutting-lock.com/terms/'
+  contact:
+    email: support@cutting-lock.com
+  license:
+    name: MIT
+    url: 'https://opensource.org/licenses/MIT'
+host: cutting-lock.com
+basePath: /v1
+tags:
+  - name: auth
+    description: Authentication
+  - name: user
+    description: User
+  - name: history
+    description: history
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /user:
+    post:
+      tags:
+        - user
+      summary: Create an user
+      description: ''
+      consumes:
+        - multipart/form-data
+      parameters:
+        - in: formData
+          name: username
+          description: The created user name.
+          required: true
+          type: string
+          format: email
+        - in: formData
+          name: password
+          description: The created user password.
+          required: true
+          type: string
+        - in: formData
+          name: profileImage
+          description: The profile image to be uploaded.
+          required: true
+          type: file
+      responses:
+        '200':
+          description: Successful operation
+        '400':
+          description: Invalid user data
+          schema:
+            $ref: '#/definitions/ApiResponse'
+  /user/login:
+    post:
+      tags:
+        - user
+      summary: Logs the user into the system
+      description: ''
+      parameters:
+        - in: body
+          name: body
+          description: The logging in user object.
+          required: true
+          schema:
+            $ref: '#/definitions/User'
+      responses:
+        '200':
+          $ref: '#/responses/Success'
+        '400':
+          description: Invalid combination of username and password
+  /user/logout:
+    get:
+      tags:
+        - user
+      summary: Logs out the current logged in user
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          $ref: '#/responses/GeneralResponse'
+  '/user/{username}':
+    get:
+      tags:
+        - user
+      summary: Get the user by the user name
+      description: ''
+      parameters:
+        - name: username
+          in: path
+          description: The user name that needs to be fetched.
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/User'
+        '404':
+          $ref: '#/responses/NotFound'
+      security:
+        - auth_key: []
+    put:
+      tags:
+        - user
+      summary: Update an user
+      description: ''
+      parameters:
+        - name: username
+          in: path
+          description: The user name that needs to be updated.
+          required: true
+          type: string
+        - in: body
+          name: body
+          description: The updated user object
+          required: true
+          schema:
+            $ref: '#/definitions/User'
+      responses:
+        '200':
+          $ref: '#/responses/Success'
+        '404':
+          $ref: '#/responses/NotFound'
+      security:
+        - auth_key: []
+    delete:
+      tags:
+        - user
+      summary: Delete an user
+      description: ''
+      parameters:
+        - name: username
+          in: path
+          description: The user name that needs to be deleted.
+          required: true
+          type: string
+      responses:
+        '200':
+          $ref: '#/responses/Success'
+        '404':
+          $ref: '#/responses/NotFound'
+      security:
+        - auth_key: []
+  '/history/{identity}':
+    get:
+      tags:
+        - history
+      summary: Get the history
+      description: ''
+      parameters:
+        - name: identity
+          in: path
+          description: The ID of the identity of the interest.
+          required: true
+          type: string
+        - $ref: '#/parameters/startTime'
+        - $ref: '#/parameters/endTime'
+        - $ref: '#/parameters/offset'
+        - $ref: '#/parameters/limit'
+      responses:
+        '200':
+          description: Successful operation
+          schema:
+            $ref: '#/definitions/History'
+        '400':
+          description: Indentity not found
+      security:
+        - auth_key: []
+  /event:
+    post:
+      tags:
+        - history
+      summary: Add an event to the history
+      description: ''
+      parameters:
+        - in: body
+          name: body
+          description: The event object that needs to be added to the history.
+          required: true
+          schema:
+            $ref: '#/definitions/Event'
+      responses:
+        '200':
+          $ref: '#/responses/Success'
+      security:
+        - auth_key: []
+securityDefinitions:
+  auth_key:
+    type: apiKey
+    name: authorization
+    in: header
+definitions:
+  User:
+    title: A user.
+    type: object
+    required:
+      - id
+      - username
+    properties:
+      id:
+        description: The ID of the user.
+        type: string
+      username:
+        description: The username.
+        type: string
+      password:
+        description: The password. Only used when creating.
+        type: string
+      profileImageUri:
+        description: The URI of the profile image.
+        type: string
+        format: uri
+      roles:
+        description: The roles of the user.
+        type: array
+        items:
+          $ref: '#/definitions/Role'
+  Role:
+    title: A role of the identity.
+    type: string
+    enum:
+      - superuser
+      - manager
+      - scheduled-manager
+  History:
+    title: A list of events in the past.
+    type: object
+    required:
+      - size
+      - events
+    properties:
+      size:
+        description: The number of items in the history.
+        type: integer
+      events:
+        description: The authentication history.
+        type: array
+        items:
+          $ref: '#/definitions/Event'
+  Event:
+    title: An event.
+    type: object
+    required:
+      - date
+      - identity
+      - object
+    properties:
+      date:
+        description: The time of the event.
+        type: string
+        format: date-time
+      identity:
+        description: The ID of the identity who executed the event.
+        type: string
+      object:
+        description: The ID of the object participated in the event.
+        type: string
+  ApiResponse:
+    title: An API response.
+    type: object
+    properties:
+      code:
+        description: The code to identity the status.
+        type: integer
+        format: int32
+      type:
+        description: The type of the response.
+        type: string
+      message:
+        description: Human-readable message.
+        type: string
+parameters:
+  startTime:
+    name: start_time
+    in: query
+    description: The start of the search of the time.
+    type: string
+    format: date-time
+  endTime:
+    name: end_time
+    in: query
+    description: The end of the search of the time.
+    type: string
+    format: date-time
+  offset:
+    name: offset
+    in: query
+    description: The offset of the results.
+    type: number
+    format: int64
+  limit:
+    name: limit
+    in: query
+    description: The limit of the results.
+    type: number
+    format: int64
+responses:
+  Success:
+    description: Successful operation
+  GeneralResponse:
+    description: General response
+    schema:
+      $ref: '#/definitions/ApiResponse'
+  NotFound:
+    description: Entity not found
+  IllegalInput:
+    description: Illegal input format
