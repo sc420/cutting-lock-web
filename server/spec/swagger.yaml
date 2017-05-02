@@ -15,8 +15,6 @@ info:
 host: cutting-lock.com
 basePath: /v1
 tags:
-  - name: auth
-    description: Authentication
   - name: user
     description: User
   - name: history
@@ -92,7 +90,7 @@ paths:
     get:
       tags:
         - user
-      summary: Get the user by the user name
+      summary: Get the user
       description: ''
       parameters:
         - name: username
@@ -155,7 +153,7 @@ paths:
     get:
       tags:
         - history
-      summary: Get the history
+      summary: Get the history of the identity
       description: ''
       parameters:
         - name: identity
