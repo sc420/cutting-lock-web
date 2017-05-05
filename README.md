@@ -32,6 +32,6 @@ npm run build:prod
 2. See the [online website](http://cuttinglock.com)
 3. Run the server:
 ```
-server:prod:ci
+npm run server:prod:ci
 ```
 4. See the [local website](http://localhost:3000)
