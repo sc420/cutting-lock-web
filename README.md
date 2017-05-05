@@ -23,14 +23,15 @@ Run the commands:
 npm run server
 ```
 
-## Deploying on Local
+## Deploying
 
 1. Build the files:
 ```
 npm run build:prod
 ```
-2. Run the server:
+2. See the [online website](http://cuttinglock.com)
+3. Run the server:
 ```
 server:prod:ci
 ```
-3. See the [website](http://localhost:3000)
+4. See the [local website](http://localhost:3000)

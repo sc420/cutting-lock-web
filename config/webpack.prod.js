@@ -7,6 +7,12 @@ const webpackMerge = require('webpack-merge'); // used to merge webpack configs
 const commonConfig = require('./webpack.common.js'); // the settings that are common to prod and dev
 
 /**
+ * Additional Configs
+ */
+
+const aws = require('./aws.prod.js');
+
+/**
  * Webpack Plugins
  */
 const DefinePlugin = require('webpack/lib/DefinePlugin');
@@ -17,6 +23,11 @@ const NormalModuleReplacementPlugin = require('webpack/lib/NormalModuleReplaceme
 const ProvidePlugin = require('webpack/lib/ProvidePlugin');
 const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
 const OptimizeJsPlugin = require('optimize-js-plugin');
+
+/**
+ * Vendor Plugins
+ */
+const S3Plugin = require('webpack-s3-plugin');
 
 /**
  * Webpack Constants
@@ -312,6 +323,20 @@ module.exports = function (env) {
        * See: https://github.com/th0r/webpack-bundle-analyzer
        */
 
+      /**
+       * Uploads files to s3 after complete
+       */
+      new S3Plugin({
+        include: /.*\.(html|css|js|json|png|ico)/,
+        // s3Options are required
+        s3Options: {
+          accessKeyId: aws.accessKeyId,
+          secretAccessKey: aws.secretAccessKey,
+        },
+        s3UploadOptions: {
+          Bucket: aws.bucketName,
+        },
+      }),
     ],
 
     /*
