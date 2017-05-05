@@ -1,5 +1,19 @@
 // Place your settings in this file to overwrite default and user settings.
 {
+  /* Search */
+
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "dll": true,
+    "dist": true
+  },
+
+  /* TypeScript  */
+
   "typescript.tsdk": "node_modules/typescript/lib/",
+
+  /* vscode-icons configuration */
+
   "vsicons.presets.angular": true
 }

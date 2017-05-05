@@ -1,4 +1,4 @@
-# Cutting Lock
+# Cutting Lock (Web)
 
 A painstaking smart lock using biometric technology and physical pain to
 painlessly open the door while preventing the painful memory of valuable
@@ -6,53 +6,33 @@ things being stolen.
 
 ## Dependencies
 
-- [Node.JS v6](https://nodejs.org/en/)
-
-## Development
-
-
+- [Node.JS](https://nodejs.org/en/)
 
 ## Installation
 
-### Dependencies
-
 1. Install [Node.JS v6](https://nodejs.org/en/)
-2. Install NPM packages:
-
+2. Run the commands:
+```
+npm i
+```
+3. Install [http-server](https://www.npmjs.com/package/http-server):
 ```
 npm i http-server -g
-npm i typescript -g
-npm i tslint -g
-```
-
-### Web
-
-Run the commands:
-
-```
-cd web/
-npm i
 ```
 
 ## Running
 
-### Web
-
 Run the commands:
 
 ```
-cd web/
 npm run server
 ```
 
 ## Deploying to Local
 
-### Web
-
 1. Build the files by running:
 
 ```
-cd web/
 npm run build:prod
 ```
 
