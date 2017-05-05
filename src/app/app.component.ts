@@ -8,8 +8,6 @@ import {
 } from '@angular/core';
 import { AppState } from './app.service';
 
-var a = 3;
-
 /*
  * App Component
  * Top Level Component
