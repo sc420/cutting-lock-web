@@ -1,0 +1,19 @@
+{
+  "name": "cutting-lock",
+  "version": "1.0.0",
+  "description": "",
+  "main": "www/bin.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ebola777/cutting-lock.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ebola777/cutting-lock/issues"
+  },
+  "homepage": "https://github.com/ebola777/cutting-lock#readme"
+}
