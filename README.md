@@ -8,7 +8,22 @@ things being stolen.
 
 - [Node.JS v6](https://nodejs.org/en/)
 
-## Install
+## Development
+
+
+
+## Installation
+
+### Dependencies
+
+1. Install [Node.JS v6](https://nodejs.org/en/)
+2. Install NPM packages:
+
+```
+npm i http-server -g
+npm i typescript -g
+npm i tslint -g
+```
 
 ### Web
 
@@ -19,7 +34,7 @@ cd web/
 npm i
 ```
 
-## Run
+## Running
 
 ### Web
 
@@ -30,6 +45,22 @@ cd web/
 npm run server
 ```
 
-## Deploy
+## Deploying to Local
 
-TODO
+### Web
+
+1. Build the files by running:
+
+```
+cd web/
+npm run build:prod
+```
+
+2. Deploy local server by running:
+
+```
+cd dist/
+http-server -p 3000
+```
+
+3. See the [website](http://localhost:3000)
