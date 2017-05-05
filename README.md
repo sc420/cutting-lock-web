@@ -15,10 +15,6 @@ things being stolen.
 ```
 npm i
 ```
-3. Install [http-server](https://www.npmjs.com/package/http-server):
-```
-npm i http-server -g
-```
 
 ## Running on Local
 
