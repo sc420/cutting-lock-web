@@ -20,27 +20,21 @@ npm i
 npm i http-server -g
 ```
 
-## Running
+## Running on Local
 
 Run the commands:
-
 ```
 npm run server
 ```
 
-## Deploying to Local
+## Deploying on Local
 
-1. Build the files by running:
-
+1. Build the files:
 ```
 npm run build:prod
 ```
-
-2. Deploy local server by running:
-
+2. Run the server:
 ```
-cd dist/
-http-server -p 3000
+server:prod:ci
 ```
-
 3. See the [website](http://localhost:3000)
