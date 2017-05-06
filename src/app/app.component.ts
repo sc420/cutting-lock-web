@@ -22,7 +22,7 @@ import { AppState } from './app.service';
 })
 export class AppComponent implements OnInit {
   public angularclassLogo = 'assets/img/angularclass-avatar.png';
-  public name = 'Angular 2 Webpack Starter';
+  public name = 'Cutting Lock';
   public url = 'https://twitter.com/AngularClass';
 
   public isNavbarCollapsed: boolean = false;
