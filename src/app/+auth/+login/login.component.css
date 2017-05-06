@@ -1,0 +1,58 @@
+p {
+  color: #CCC;
+}
+
+#background {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  background: white no-repeat;
+  background-size: cover;
+}
+
+.page-header h1 {
+  color: white;
+}
+
+.page-header small {
+  color: #eeeeee;
+}
+
+.spacing {
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+.middle-page {
+  width: 700px;
+  height: 600px;
+  margin: auto;
+}
+
+.logo {
+  color: #CCC;
+}
+
+.container {
+  border-left: 1px solid #ccc;
+  height: 180px
+}
+
+.btn-facebook {
+  background: #3b5998;
+}
+
+.btn-twitter {
+  background: #00aced;
+}
+
+.links a {
+  color: white;
+}

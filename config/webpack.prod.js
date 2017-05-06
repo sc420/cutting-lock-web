@@ -327,7 +327,7 @@ module.exports = function (env) {
        * Uploads files to s3 after complete
        */
       new S3Plugin({
-        include: /.*\.(html|css|js|json|png|ico)/,
+        include: /.*\.(html|css|js|json|png|ico|mp4)/,
         // s3Options are required
         s3Options: {
           accessKeyId: aws.accessKeyId,

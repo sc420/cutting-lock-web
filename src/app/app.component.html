@@ -9,7 +9,7 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" [routerLink]="['./']">
-        <span><img class="img-brand" alt="Brand" src="/assets/icon/lock_red.png "></span>
+        <span><img class="img-brand" alt="Brand" src="/assets/icon/lock-red.png "></span>
         <span>Cutting Lock</span>
       </a>
     </div>
@@ -24,7 +24,7 @@
         <li routerLinkActive="active " [routerLinkActiveOptions]="{exact: true} "><a [routerLink]="[ './about']">About</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right ">
-        <li routerLinkActive="active " [routerLinkActiveOptions]="{exact: true} "><a [routerLink]=" [ './login'] ">Login</a></li>
+        <li routerLinkActive="active " [routerLinkActiveOptions]="{exact: true} "><a [routerLink]=" [ './auth/login'] ">Login</a></li>
       </ul>
     </div>
     <!-- /.navbar-collapse -->
@@ -32,17 +32,17 @@
   <!-- /.container-fluid -->
 </nav>
 
-<main>
-  <router-outlet></router-outlet>
+<main id="wrap-main">
+  <div id="main">
+    <router-outlet></router-outlet>
+  </div>
 </main>
-
-<pre class="app-state ">this.appState.state = {{ appState.state | json }}</pre>
 
 <footer class="footer">
   <div class="container">
     <ul class="fa-ul">
       <li>
-        <i class="fa-li fa fa-envelope"></i> Contact SmartLock team at <a href="mailto:support@cuttinglock.com?Subject=Hello!"
+        <i class="fa-li fa fa-envelope"></i> Contact CuttingLock team at <a href="mailto:support@cuttinglock.com?Subject=Hello!"
           target="_top">support@cuttinglock.com</a>
       </li>
       <li>
