@@ -35,8 +35,12 @@ export class AppComponent implements OnInit {
     console.log('Initial App State', this.appState.state);
   }
 
-  public toggleCollapse() {
-    this.isNavbarCollapsed = !this.isNavbarCollapsed;
+  public toggleCollapse(isCollapsed: boolean) {
+    if (typeof isCollapsed !== 'undefined') {
+      this.isNavbarCollapsed = isCollapsed;
+    } else {
+      this.isNavbarCollapsed = !this.isNavbarCollapsed;
+    }
   }
 }
 

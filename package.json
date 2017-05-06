@@ -90,7 +90,6 @@
     "ngx-bootstrap": "^1.6.6",
     "reflect-metadata": "^0.1.10",
     "rxjs": "5.0.2",
-    "webpack": "^2.4.1",
     "zone.js": "~0.8.5"
   },
   "devDependencies": {
@@ -149,7 +148,7 @@
     "typedoc": "^0.5.10",
     "typescript": "~2.2.2",
     "url-loader": "^0.5.8",
-    "webpack": "~2.4.1",
+    "webpack": "^2.5.0",
     "webpack-dev-middleware": "^1.10.1",
     "webpack-dev-server": "~2.4.2",
     "webpack-dll-bundles-plugin": "^1.0.0-beta.5",
