@@ -1,5 +1,5 @@
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" (click)="toggleCollapse()" [attr.aria-expanded]="!isNavbarCollapsed">
@@ -38,11 +38,17 @@
 
 <pre class="app-state ">this.appState.state = {{ appState.state | json }}</pre>
 
-<footer>
-  <span>WebPack Angular 2 Starter by <a [href]="url ">@AngularClass</a></span>
-  <div>
-    <a [href]="url ">
-      <img [src]="angularclassLogo " width="25% ">
-    </a>
+<footer class="footer">
+  <div class="container">
+    <ul class="fa-ul">
+      <li>
+        <i class="fa-li fa fa-envelope"></i> Contact SmartLock team at <a href="mailto:support@cuttinglock.com?Subject=Hello!"
+          target="_top">support@cuttinglock.com</a>
+      </li>
+      <li>
+        <i class="fa-li fa fa-commenting"></i>
+        <span class="text-muted">This is a homework website for NTHU CS542000 Cloud Programming. Please do not take this website seriously.</span>
+      </li>
+    </ul>
   </div>
 </footer>

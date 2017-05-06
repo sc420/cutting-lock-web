@@ -8,8 +8,6 @@ import {
 } from '@angular/core';
 import { AppState } from './app.service';
 
-import Aws from 'aws-sdk';
-
 /*
  * App Component
  * Top Level Component

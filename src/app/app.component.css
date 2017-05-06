@@ -8,3 +8,19 @@ body {
 /*a.active {
   background-color: gray;
 }*/
+
+body {
+  padding-top: 70px;
+  padding-bottom: 60px;
+}
+
+.footer {
+  width: 100%;
+  background-color: #f5f5f5;
+}
+
+.footer .container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  line-height: 20px;
+}
