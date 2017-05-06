@@ -14,7 +14,7 @@
     <div class="panel-body">
 
       <div class="row">
-        <div class="col-md-5 links">
+        <div class="col-sm-5 links">
           <a href="#" class="btn btn-lg btn-block btn-facebook">
             <i class="fa fa-facebook-square"></i>
             <span class="hidden-xs">Facebook</span>
@@ -25,15 +25,23 @@
           </a>
         </div>
 
-        <div class="col-md-7 container">
+        <div class="col-sm-7 container">
           <form class="form-horizontal">
-            <fieldset>
-              <input name="textinput" type="text" placeholder="Enter User Name" class="form-control input-md">
-              <div class="spacing"><input type="checkbox" name="checkboxes" value="1"><small> Remember me</small></div>
-              <input name="textinput" type="text" placeholder="Enter Password" class="form-control input-md">
-              <div class="spacing"><a href="#"><small> Forgot Password?</small></a><br/></div>
-              <button id="singlebutton" name="singlebutton" class="btn btn-info btn-lg pull-right">Sign In</button>
-            </fieldset>
+            <div class="form-group">
+              <input name="username" type="text" class="form-control" placeholder="Enter Username">
+            </div>
+            <div class="form-group">
+              <input name="password" type="password" class="form-control" placeholder="Enter Password">
+            </div>
+            <div class="row">
+              <div class="col-sm-8">
+                <label><input name="remember" type="checkbox">Remember me</label>
+              </div>
+              <div class="col-sm-4">
+                <a href="#" class="pull-left"><small>Forgot Password?</small></a><br/>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-info btn-lg pull-right btn-submit">Sign In</button>
           </form>
         </div>
       </div>

@@ -25,11 +25,6 @@ p {
   color: #eeeeee;
 }
 
-.spacing {
-  padding-top: 7px;
-  padding-bottom: 7px;
-}
-
 .middle-page {
   width: 700px;
   height: 600px;
@@ -55,4 +50,12 @@ p {
 
 .links a {
   color: white;
+}
+
+.form-group {
+  margin: 4px 4px 8px;
+}
+
+.btn-submit {
+  margin-top: 20px;
 }
