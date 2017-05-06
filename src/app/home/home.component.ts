@@ -1,6 +1,6 @@
 import {
   Component,
-  OnInit
+  OnInit,
 } from '@angular/core';
 
 import { AppState } from '../app.service';
@@ -14,12 +14,12 @@ import { XLargeDirective } from './x-large';
   selector: 'home',  // <home></home>
   // We need to tell Angular's Dependency Injection which providers are in our app.
   providers: [
-    Title
+    Title,
   ],
   // Our list of styles in our component. We may add more to compose many styles together
   styleUrls: ['./home.component.css'],
   // Every Angular template is first compiled by the browser before Angular runs it's compiler
-  templateUrl: './home.component.html'
+  templateUrl: './home.component.html',
 })
 export class HomeComponent implements OnInit {
   // Set our default values
@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
   // TypeScript public modifiers
   constructor(
     public appState: AppState,
-    public title: Title
+    public title: Title,
   ) { }
 
   public ngOnInit() {

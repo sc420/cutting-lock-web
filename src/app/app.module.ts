@@ -3,16 +3,16 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {
   NgModule,
-  ApplicationRef
+  ApplicationRef,
 } from '@angular/core';
 import {
   removeNgStyles,
   createNewHosts,
-  createInputTransfer
+  createInputTransfer,
 } from '@angularclass/hmr';
 import {
   RouterModule,
-  PreloadAllModules
+  PreloadAllModules,
 } from '@angular/router';
 
 import { AlertModule } from 'ngx-bootstrap/alert';
@@ -37,13 +37,13 @@ import '../styles/headings.css';
 // Application wide providers
 const APP_PROVIDERS = [
   ...APP_RESOLVER_PROVIDERS,
-  AppState
+  AppState,
 ];
 
 type StoreType = {
   state: InternalStateType,
   restoreInputValues: () => void,
-  disposeOldHosts: () => void
+  disposeOldHosts: () => void,
 };
 
 /**
@@ -56,7 +56,7 @@ type StoreType = {
     AboutComponent,
     HomeComponent,
     NoContentComponent,
-    XLargeDirective
+    XLargeDirective,
   ],
   imports: [ // import Angular's modules
     BrowserModule,
@@ -67,14 +67,14 @@ type StoreType = {
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,
-    APP_PROVIDERS
-  ]
+    APP_PROVIDERS,
+  ],
 })
 export class AppModule {
 
   constructor(
     public appRef: ApplicationRef,
-    public appState: AppState
+    public appState: AppState,
   ) { }
 
   public hmrOnInit(store: StoreType) {

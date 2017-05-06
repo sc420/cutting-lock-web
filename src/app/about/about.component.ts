@@ -1,6 +1,6 @@
 import {
   Component,
-  OnInit
+  OnInit,
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
@@ -20,14 +20,14 @@ import { ActivatedRoute } from '@angular/router';
       </h3>
     </div>
     <pre>this.localState = {{ localState | json }}</pre>
-  `
+  `,
 })
 export class AboutComponent implements OnInit {
 
   public localState: any;
   constructor(
-    public route: ActivatedRoute
-  ) {}
+    public route: ActivatedRoute,
+  ) { }
 
   public ngOnInit() {
     this.route

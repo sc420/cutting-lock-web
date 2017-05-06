@@ -2,7 +2,7 @@ import {
   fakeAsync,
   inject,
   tick,
-  TestBed
+  TestBed,
 } from '@angular/core/testing';
 import { Component } from '@angular/core';
 import { BaseRequestOptions, Http } from '@angular/http';
@@ -15,7 +15,7 @@ import { XLargeDirective } from './x-large.directive';
 describe('x-large directive', () => {
   // Create a test component to test directives
   @Component({
-    template: '<div x-large>Content</div>'
+    template: '<div x-large>Content</div>',
   })
   class TestComponent { }
 
@@ -23,7 +23,7 @@ describe('x-large directive', () => {
     TestBed.configureTestingModule({
       declarations: [
         XLargeDirective,
-        TestComponent
+        TestComponent,
       ]
     });
   });
