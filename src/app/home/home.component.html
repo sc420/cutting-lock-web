@@ -17,12 +17,11 @@
       <strong>Oh snap!</strong> Change a few things up and try submitting again.
     </alert>
 
-    <form (ngSubmit)="submitState(localState.value)" autocomplete="off">
-
-      <input [value]="localState.value" (input)="localState.value = $event.target.value" placeholder="Submit Local State to App State"
-        autofocus>
-
-      <button>Submit Value</button>
+    <form action="{{config.getServerUri() + '/v1/history'}}" method="POST" class="form-horizontal" #form>
+      <div class="form-group">
+        <input name="message" type="text" class="form-control" placeholder="SQS Message" required>
+      </div>
+      <button type="submit" class="btn btn-info btn-lg pull-right btn-submit" (click)="form.submit()">Sign In</button>
     </form>
     <!--
         <input type="text" [value]="localState.value" (input)="localState.value = $event.target.value" autofocus>
