@@ -5,6 +5,7 @@ export const routes = [
     path: '', children: [
       { path: '', component: AuthComponent },
       { path: 'login', loadChildren: './+login#LoginModule' },
+      { path: 'register', loadChildren: './+register#RegisterModule' },
     ],
   },
 ];

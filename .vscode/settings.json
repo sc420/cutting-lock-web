@@ -15,5 +15,5 @@
 
   /* vscode-icons configuration */
 
-  "vsicons.presets.angular": true
+  "vsicons.presets.angular": false
 }
