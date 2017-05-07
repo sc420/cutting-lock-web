@@ -1,12 +1,9 @@
 import {
   Component,
   OnInit,
+  OnDestroy,
 } from '@angular/core';
-/*
- * We're loading this component asynchronously
- * We are using some magic with es6-promise-loader that will wrap the module with a Promise
- * see https://github.com/gdi2290/es6-promise-loader for more info
- */
+import { ActivatedRoute } from '@angular/router';
 
 console.log('`Detail` component loaded asynchronously');
 
@@ -22,10 +19,18 @@ console.log('`Detail` component loaded asynchronously');
     <router-outlet></router-outlet>
   `,
 })
-export class DetailComponent implements OnInit {
+export class DetailComponent implements OnInit, OnDestroy {
+  private sub: any;
+
+  constructor(private route: ActivatedRoute) { }
 
   public ngOnInit() {
-    console.log('hello `Detail` component');
+    this.sub = this.route.params.subscribe((params) => {
+      console.log(params['token']);
+    });
   }
 
+  public ngOnDestroy() {
+    this.sub.unsubscribe();
+  }
 }
