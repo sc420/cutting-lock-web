@@ -18,7 +18,7 @@ npm i
 
 ## Running on Local
 
-Run the commands:
+1. Run the commands:
 ```
 npm run server
 ```
@@ -29,9 +29,9 @@ npm run server
 ```
 npm run build:prod
 ```
-2. See the [online website](http://cuttinglock.com)
+2. See the [online website](https://cuttinglock.com)
 3. Run the server:
 ```
 npm run server:prod:ci
 ```
-4. See the [local website](http://localhost:3000)
+4. See the [local website](https://localhost:3000)
