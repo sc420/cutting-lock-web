@@ -25,13 +25,14 @@ npm run server
 
 ## Deploying
 
-1. Build the files:
+1. Build the files, it will also upload all the files to S3:
 ```
 npm run build:prod
 ```
-2. See the [online website](https://cuttinglock.com)
-3. Run the server:
+2. Run the server on local:
 ```
 npm run server:prod:ci
 ```
-4. See the [local website](https://localhost:3000)
+3. See the [local website](https://localhost:3000)
+4. [Invalidate CloudFront objects](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html).
+5. See the [online website](https://cuttinglock.com)
