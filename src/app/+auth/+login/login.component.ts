@@ -2,11 +2,8 @@ import {
   Component,
   OnInit,
 } from '@angular/core';
-/*
- * We're loading this component asynchronously
- * We are using some magic with es6-promise-loader that will wrap the module with a Promise
- * see https://github.com/gdi2290/es6-promise-loader for more info
- */
+
+import config from '../../../config';
 
 @Component({
   selector: 'login',
@@ -15,10 +12,10 @@ import {
   ],
   templateUrl: './login.component.html',
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
+  public config: Object;
 
-  public ngOnInit() {
-    console.log('hello `Login` component');
+  constructor() {
+    this.config = config;
   }
-
 }
