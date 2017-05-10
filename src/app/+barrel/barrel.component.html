@@ -1,0 +1,26 @@
+<div class="container">
+  <form action="{{config.getServerUri() + '/v1/history'}}" method="POST" class="form-horizontal" #form>
+    <div class="form-group">
+      <label>Identity</label>
+      <input name="identity" type="text" class="form-control" placeholder="Identity">
+    </div>
+    <div class="form-group">
+      <label>Object</label>
+      <input name="object" type="text" class="form-control" placeholder="Object">
+    </div>
+    <div class="form-group">
+      <label>Action</label>
+      <select name="action" class="form-control">
+        <option>AUTHROIZED</option>
+        <option>UNAUTHORIZED</option>
+        <option>ACCESS-DENIED</option>
+        <option>MODIFIED</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Date</label>
+      <input name="date" type="text" class="form-control" placeholder="Date" [(ngModel)]="date">
+    </div>
+    <button type="submit" class="btn btn-info btn-lg pull-right btn-submit" (click)="form.submit()">Post SQS Message</button>
+  </form>
+</div>
