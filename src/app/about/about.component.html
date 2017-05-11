@@ -1,0 +1,24 @@
+<div class="container">
+  <h1>History for Identity 1</h1>
+  <table class="table table-hover">
+    <thead class="thead-default">
+      <tr>
+        <th>ID</th>
+        <th>Identity</th>
+        <th>Object</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let event of history">
+        <th scope="row">{{ event.id }}</th>
+        <td>{{ event.identity }}</td>
+        <td>{{ event.object }}</td>
+        <td>{{ event.date | date:'short' }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+    {{ errorMessage }}
+  </div>
+</div>
