@@ -6,6 +6,7 @@
         <th>ID</th>
         <th>Identity</th>
         <th>Object</th>
+        <th>Action</th>
         <th>Date</th>
       </tr>
     </thead>
@@ -14,6 +15,7 @@
         <th scope="row">{{ event.id }}</th>
         <td>{{ event.identity }}</td>
         <td>{{ event.object }}</td>
+        <td>{{ event.action }}</td>
         <td>{{ event.date | date:'short' }}</td>
       </tr>
     </tbody>
