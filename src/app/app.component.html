@@ -22,9 +22,15 @@
         <li routerLinkActive="active " [routerLinkActiveOptions]="{exact: true} "><a [routerLink]="[ '/barrel']">Barrel</a></li>
         <li routerLinkActive="active " [routerLinkActiveOptions]="{exact: true} "><a [routerLink]="[ '/about']">About</a></li>
       </ul>
-      <ul class="nav navbar-nav navbar-right " (click)="toggleCollapse(false)">
+      <ul class="nav navbar-nav navbar-right" *ngIf="profile === null" (click)="toggleCollapse(false)">
         <li routerLinkActive="active " [routerLinkActiveOptions]="{exact: true} "><a [routerLink]=" [ '/auth/register'] ">Register</a></li>
         <li routerLinkActive="active " [routerLinkActiveOptions]="{exact: true} "><a [routerLink]=" [ '/auth/login'] ">Login</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right" *ngIf="profile" (click)="toggleCollapse(false)">
+        <li routerLinkActive="active " [routerLinkActiveOptions]="{exact: true} ">
+          <a class="profile-uri-wrap" [routerLink]=" [ '/auth/profile'] "><img class="profile-uri" [src]="profile.profileUri" alt="profile-picture"></a>
+        </li>
+        <li routerLinkActive="active " [routerLinkActiveOptions]="{exact: true} "><a href="{{baseUrl}}/v1/user/logout">Logout</a></li>
       </ul>
     </div>
     <!-- /.navbar-collapse -->

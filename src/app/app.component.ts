@@ -8,6 +8,10 @@ import {
 } from '@angular/core';
 import { AppState } from './app.service';
 
+import config from '../config';
+
+import { AuthService } from './service/auth.service';
+
 /*
  * App Component
  * Top Level Component
@@ -27,12 +31,31 @@ export class AppComponent implements OnInit {
 
   public isNavbarCollapsed: boolean = false;
 
+  public baseUrl: string;
+  public profile: Object;
+  public errorMessage: string;
+
   constructor(
     public appState: AppState,
-  ) { }
+    private authService: AuthService,
+  ) {
+    this.baseUrl = config.getServerUri();
+  }
 
   public ngOnInit() {
     console.log('Initial App State', this.appState.state);
+
+    this.authService.getProfile()
+      .subscribe(
+      (profile) => {
+        this.appState.set('profile', profile);
+        this.profile = profile;
+      },
+      (error) => {
+        this.profile = null;
+        this.errorMessage = <any>error;
+      },
+    );
   }
 
   public toggleCollapse(isCollapsed: boolean) {

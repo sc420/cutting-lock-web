@@ -1,0 +1,26 @@
+<div class="container">
+  <h1>User Profile</h1>
+  <div class="row">
+    <img *ngIf="profile.profileUri" [src]="profile.profileUri" alt="profile-picture">
+  </div>
+  <br>
+  <div class="row">
+    <div class="panel panel-info">
+      <div class="panel-heading">Profile</div>
+      <div class="panel-body">
+        <table class="table table-hover">
+          <tbody>
+            <tr>
+              <th>Username</th>
+              <td>{{ profile.username }}</td>
+            </tr>
+            <tr>
+              <th>Cognito ID</th>
+              <td>{{ profile.cognitoId }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

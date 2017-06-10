@@ -1,1 +1,10 @@
+.profile-uri-wrap {
+  height: 50px;
+  width: 50px;
+  padding: 0 !important;
+}
 
+.profile-uri {
+  max-height: 100%;
+  max-width: 100%;
+}

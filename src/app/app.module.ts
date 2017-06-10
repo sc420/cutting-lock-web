@@ -20,6 +20,8 @@ import {
 
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 
+/* User-defined services */
+import { AuthService } from './service/auth.service';
 import { HistoryService } from './service/history.service';
 
 /*
@@ -75,6 +77,8 @@ type StoreType = {
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,
     APP_PROVIDERS,
+    // User-defined services
+    AuthService,
     HistoryService,
   ],
 })
