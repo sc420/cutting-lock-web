@@ -24,6 +24,7 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 /* User-defined services */
 import { AuthService } from './service/auth.service';
 import { HistoryService } from './service/history.service';
+import { WebSocketService } from './service/web-socket.service';
 
 /*
  * Platform and Environment providers/directives/pipes
@@ -79,6 +80,7 @@ type StoreType = {
     // User-defined services
     AuthService,
     HistoryService,
+    WebSocketService,
   ],
 })
 export class AppModule {

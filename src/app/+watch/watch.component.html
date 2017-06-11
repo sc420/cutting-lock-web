@@ -1,8 +1,37 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6">
-      <div style="display: block;">
-        <canvas baseChart width="400" height="400" [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType"></canvas>
+      <div>
+        <canvas baseChart width="400" height="250" [datasets]="lineChartData1" [labels]="lineChartLabels" [options]="lineChartOptions1" [colors]="lineChartColors1" [legend]="lineChartLegend[0]" [chartType]="lineChartType[0]"></canvas>
+      </div>
+      <div>
+        <canvas baseChart width="400" height="250" [datasets]="lineChartData2" [labels]="lineChartLabels" [options]="lineChartOptions2" [colors]="lineChartColors2" [legend]="lineChartLegend[1]" [chartType]="lineChartType[1]"></canvas>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h1>Access Log</h1>
+      <div class="watch-log">
+        <div class="row" *ngFor="let watch of watchLog">
+          <div class="well well-sm">
+            <div class="row">
+              <div class="col-sm-6 col-md-4">
+                <img [src]="getImageSrc(watch)" alt="" class="img-rounded img-responsive" />
+              </div>
+              <div class="col-sm-6 col-md-8">
+                <h4 *ngIf="watch.user">{{getUsername(watch)}}</h4>
+                <h4 *ngIf="!watch.user" class="stranger"><b>{{getUsername(watch)}}</b></h4>
+                <p>
+                  <i class="glyphicon glyphicon-time"></i><b>Access Time: </b>{{getDate(watch)}}
+                  <br />
+                  <i class="glyphicon glyphicon-stats"></i><b>Similarity: </b>{{watch.similarity}}
+                </p>
+                <!-- Split button -->
+                <button type="button" class="btn btn-primary">Profile</button>
+                <button type="button" class="btn btn-danger">Block</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

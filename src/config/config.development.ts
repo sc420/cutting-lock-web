@@ -9,5 +9,9 @@ export class DevelopmentConfig extends Config {
       host: 'localhost:3001',
       protocol: 'https',
     };
+    this.webSocketServer = {
+      host: 'localhost:3002',
+      protocol: 'ws',
+    };
   }
 };
