@@ -19,8 +19,7 @@
       <ul class="nav navbar-nav " (click)="toggleCollapse(false)">
         <li routerLinkActive="active " [routerLinkActiveOptions]="{exact: true} "><a [routerLink]="[ '/']">Index</a></li>
         <li routerLinkActive="active " [routerLinkActiveOptions]="{exact: true} "><a [routerLink]="[ '/detail']">Detail</a></li>
-        <li routerLinkActive="active " [routerLinkActiveOptions]="{exact: true} "><a [routerLink]="[ '/barrel']">Barrel</a></li>
-        <li routerLinkActive="active " [routerLinkActiveOptions]="{exact: true} "><a [routerLink]="[ '/about']">About</a></li>
+        <li routerLinkActive="active " [routerLinkActiveOptions]="{exact: true} "><a [routerLink]="[ '/dev']">Dev</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right" *ngIf="profile === null" (click)="toggleCollapse(false)">
         <li routerLinkActive="active " [routerLinkActiveOptions]="{exact: true} "><a [routerLink]=" [ '/auth/register'] ">Register</a></li>
