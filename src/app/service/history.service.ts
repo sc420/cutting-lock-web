@@ -15,9 +15,9 @@ export class HistoryService {
     this.baseUrl = config.getServerUri();
   }
 
-  public getHistory = (identity: string): Observable<Event[]> => {
+  public getHistory = (): Observable<Event[]> => {
     return this.http
-      .get(`${this.baseUrl}/v1/history/${identity}`)
+      .get(`${this.baseUrl}/v1/history`)
       .map((res: Response) => res.json())
       .catch(this.handleError_);
   }

@@ -25,7 +25,7 @@ export class DevComponent implements OnInit {
   }
 
   public ngOnInit() {
-    this.historyService.getHistory('1')
+    this.historyService.getHistory()
       .subscribe(
       (history) => { this.history = history; },
       (error) => { this.errorMessage = <any>error; },
