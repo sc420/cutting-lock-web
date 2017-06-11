@@ -10,7 +10,7 @@ export class ProductionConfig extends Config {
       protocol: 'https',
     };
     this.webSocketServer = {
-      host: 'api.cuttinglock.com:3002',
+      host: 'ws.cuttinglock.com',
       protocol: 'wss',
     };
   }
