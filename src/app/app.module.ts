@@ -18,6 +18,7 @@ import {
   PreloadAllModules,
 } from '@angular/router';
 
+/* Vendors */
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 /* User-defined services */

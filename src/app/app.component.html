@@ -18,6 +18,7 @@
     <div class="collapse navbar-collapse " [ngStyle]="{display: isNavbarCollapsed ? 'block' : 'none'} ">
       <ul class="nav navbar-nav " (click)="toggleCollapse(false)">
         <li routerLinkActive="active " [routerLinkActiveOptions]="{exact: true} "><a [routerLink]="[ '/']">Index</a></li>
+        <li routerLinkActive="active " [routerLinkActiveOptions]="{exact: true} "><a [routerLink]="[ '/watch']">Watch</a></li>
         <li routerLinkActive="active " [routerLinkActiveOptions]="{exact: true} "><a [routerLink]="[ '/dev']">Dev</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right" *ngIf="profile === null" (click)="toggleCollapse(false)">

@@ -25,9 +25,7 @@ import { AuthService } from './service/auth.service';
   templateUrl: './app.component.html',
 })
 export class AppComponent implements OnInit {
-  public angularclassLogo = 'assets/img/angularclass-avatar.png';
   public name = 'Cutting Lock';
-  public url = 'https://twitter.com/AngularClass';
 
   public isNavbarCollapsed: boolean = false;
 

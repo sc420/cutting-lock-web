@@ -7,8 +7,9 @@ import { DataResolver } from './app.resolver';
 export const ROUTES: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'auth', loadChildren: './+auth#AuthModule' },
+  { path: 'watch', loadChildren: './+watch#WatchModule' },
   { path: 'dev', loadChildren: './+dev#DevModule' },
+  { path: 'auth', loadChildren: './+auth#AuthModule' },
   { path: '404', component: NoContentComponent },
   { path: '**', redirectTo: '404' },
 ];
