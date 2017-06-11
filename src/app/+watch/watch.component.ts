@@ -156,7 +156,6 @@ export class WatchComponent {
       // Clear the data of the last time
       this.lastAuthorized = 0;
       this.lastAccessDenied = 0;
-      this.lastSimilarity = 0;
       // Update the chart
       this.lineChartData1 = this.lineChartData1.slice();
       this.lineChartData2 = this.lineChartData2.slice();
